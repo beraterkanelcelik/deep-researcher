@@ -1,0 +1,17 @@
+[
+  {"id": "ts-01", "input": "What is 42 * 17?", "expected_tools": ["calculator"], "tags": ["math"]},
+  {"id": "ts-02", "input": "What time is it?", "expected_tools": ["get_current_time"], "tags": ["time"]},
+  {"id": "ts-03", "input": "Search for the latest news about AI regulation", "expected_tools": ["tavily_search"], "tags": ["search"]},
+  {"id": "ts-04", "input": "Help me plan a vacation to Japan", "expected_tools": ["create_plan"], "tags": ["planning"]},
+  {"id": "ts-05", "input": "Hello, how are you?", "expected_tools": [], "tags": ["greeting", "no-tool"]},
+  {"id": "ts-06", "input": "What is the square root of 144?", "expected_tools": ["calculator"], "tags": ["math"]},
+  {"id": "ts-07", "input": "Tell me a joke", "expected_tools": [], "tags": ["creative", "no-tool"]},
+  {"id": "ts-08", "input": "Search for Python 3.13 new features", "expected_tools": ["tavily_search"], "tags": ["search"]},
+  {"id": "ts-09", "input": "Create a step-by-step plan to learn machine learning", "expected_tools": ["create_plan"], "tags": ["planning"]},
+  {"id": "ts-10", "input": "What is 2^10 + 3^5?", "expected_tools": ["calculator"], "tags": ["math"]},
+  {"id": "ts-11", "input": "What day of the week is it today?", "expected_tools": ["get_current_time"], "tags": ["time"]},
+  {"id": "ts-12", "input": "Explain what machine learning is in simple terms", "expected_tools": [], "tags": ["explanation", "no-tool"]},
+  {"id": "ts-13", "input": "Calculate (100 / 4) + (50 * 2)", "expected_tools": ["calculator"], "tags": ["math"]},
+  {"id": "ts-14", "input": "Search for best practices in API design 2025", "expected_tools": ["tavily_search"], "tags": ["search"]},
+  {"id": "ts-15", "input": "Create a project plan for building a chat application", "expected_tools": ["create_plan"], "tags": ["planning"]}
+]

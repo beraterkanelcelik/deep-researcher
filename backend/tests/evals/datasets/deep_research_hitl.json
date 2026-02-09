@@ -1,0 +1,144 @@
+[
+  {
+    "id": "hitl-01",
+    "description": "Happy path: select 3 topics, approve report",
+    "input_messages": [
+      {"type": "human", "content": "Do a deep research investigation on the current state of quantum computing in 2025, including recent breakthroughs and commercial applications."}
+    ],
+    "hitl_responses": [
+      {
+        "expected_hitl_type": "checkbox",
+        "resume_value": ["topic_0", "topic_1", "topic_2"],
+        "description": "Select first 3 suggested topics"
+      },
+      {
+        "expected_hitl_type": "review",
+        "resume_value": {"action": "approve"},
+        "description": "Approve the research report"
+      }
+    ],
+    "expected_hitl_types": ["checkbox", "review"],
+    "grading_rubric": "Agent should trigger deep_research tool, complete the HITL cycle (clarify topics -> review report), and produce a comprehensive report on quantum computing with key findings and sources.",
+    "tags": ["happy-path", "standard"]
+  },
+  {
+    "id": "hitl-02",
+    "description": "Select-all default: empty checkbox selection defaults to all topics",
+    "input_messages": [
+      {"type": "human", "content": "Please research the impact of artificial intelligence on healthcare diagnostics in depth."}
+    ],
+    "hitl_responses": [
+      {
+        "expected_hitl_type": "checkbox",
+        "resume_value": [],
+        "description": "Empty selection - should default to all topics"
+      },
+      {
+        "expected_hitl_type": "review",
+        "resume_value": {"action": "approve"},
+        "description": "Approve the research report"
+      }
+    ],
+    "expected_hitl_types": ["checkbox", "review"],
+    "grading_rubric": "Agent should handle empty topic selection by defaulting to all suggested topics. Report should be comprehensive since all topics were researched.",
+    "tags": ["select-all", "default-behavior"]
+  },
+  {
+    "id": "hitl-03",
+    "description": "Redo loop: first review sends redo, second review approves",
+    "input_messages": [
+      {"type": "human", "content": "Conduct deep research on renewable energy storage technologies and their viability."}
+    ],
+    "hitl_responses": [
+      {
+        "expected_hitl_type": "checkbox",
+        "resume_value": ["topic_0", "topic_1"],
+        "description": "Select first 2 topics"
+      },
+      {
+        "expected_hitl_type": "review",
+        "resume_value": {"action": "redo"},
+        "description": "Request redo of the research"
+      },
+      {
+        "expected_hitl_type": "review",
+        "resume_value": {"action": "approve"},
+        "description": "Approve the second report"
+      }
+    ],
+    "expected_hitl_types": ["checkbox", "review", "review"],
+    "grading_rubric": "Agent should handle the redo flow: after first review returns redo, it should re-orchestrate and re-research, then present a new report for review. The final report should still be well-structured.",
+    "tags": ["redo-loop", "multi-review"]
+  },
+  {
+    "id": "hitl-04",
+    "description": "Edit report: review sends edit action with title change",
+    "input_messages": [
+      {"type": "human", "content": "Research the evolution and future of electric vehicles and battery technology in depth."}
+    ],
+    "hitl_responses": [
+      {
+        "expected_hitl_type": "checkbox",
+        "resume_value": ["topic_0", "topic_1", "topic_2"],
+        "description": "Select first 3 topics"
+      },
+      {
+        "expected_hitl_type": "review",
+        "resume_value": {"action": "edit", "edits": {"title": "Electric Vehicles & Battery Tech: A Comprehensive Review"}},
+        "description": "Edit the report title"
+      }
+    ],
+    "expected_hitl_types": ["checkbox", "review"],
+    "grading_rubric": "Agent should handle edit action by updating the report with provided edits. The final report title should reflect the user's edit.",
+    "tags": ["edit-report", "modification"]
+  },
+  {
+    "id": "hitl-05",
+    "description": "Cancel save: user cancels at the confirm step",
+    "input_messages": [
+      {"type": "human", "content": "Do deep research on the cybersecurity threat landscape for small businesses and then save the report."}
+    ],
+    "hitl_responses": [
+      {
+        "expected_hitl_type": "checkbox",
+        "resume_value": ["topic_0", "topic_1"],
+        "description": "Select first 2 topics"
+      },
+      {
+        "expected_hitl_type": "review",
+        "resume_value": {"action": "approve"},
+        "description": "Approve the research report"
+      },
+      {
+        "expected_hitl_type": "confirm",
+        "resume_value": {"action": "cancel"},
+        "description": "Cancel saving the report"
+      }
+    ],
+    "expected_hitl_types": ["checkbox", "review", "confirm"],
+    "grading_rubric": "Agent should handle save cancellation gracefully. After the user cancels, the agent should acknowledge the cancellation and not save the report.",
+    "tags": ["cancel-save", "graceful-cancel"]
+  },
+  {
+    "id": "hitl-06",
+    "description": "Quick depth: minimal topic selection with quick research depth",
+    "input_messages": [
+      {"type": "human", "content": "Do a quick deep research on the latest trends in serverless computing."}
+    ],
+    "hitl_responses": [
+      {
+        "expected_hitl_type": "checkbox",
+        "resume_value": ["topic_0"],
+        "description": "Select only the first topic for quick research"
+      },
+      {
+        "expected_hitl_type": "review",
+        "resume_value": {"action": "approve"},
+        "description": "Approve the research report"
+      }
+    ],
+    "expected_hitl_types": ["checkbox", "review"],
+    "grading_rubric": "Agent should handle minimal topic selection. Even with fewer topics, the report should be coherent and have the required structure.",
+    "tags": ["quick-depth", "minimal"]
+  }
+]

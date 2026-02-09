@@ -1,0 +1,10 @@
+[
+  {"id": "rq-01", "topic": "Impact of AI on healthcare diagnostics", "rubric": "Covers recent advances, mentions specific systems/studies, discusses limitations, cites sources"},
+  {"id": "rq-02", "topic": "Climate change mitigation strategies 2024-2025", "rubric": "Covers policy, technology, individual actions; uses data; balanced perspective"},
+  {"id": "rq-03", "topic": "Quantum computing current state and applications", "rubric": "Technically accurate, covers hardware/algorithms/applications, realistic about timeline"},
+  {"id": "rq-04", "topic": "Cybersecurity threats and defenses in 2025", "rubric": "Current threat landscape, practical defenses, mentions frameworks, specific examples"},
+  {"id": "rq-05", "topic": "Electric vehicle market trends", "rubric": "Market data, manufacturer comparison, infrastructure challenges, future projections"},
+  {"id": "rq-06", "topic": "Large language model safety research", "rubric": "Covers alignment, RLHF, red-teaming, evaluation methods; cites key papers/orgs"},
+  {"id": "rq-07", "topic": "Space exploration milestones 2024-2025", "rubric": "Specific missions, organizations, achievements, upcoming launches"},
+  {"id": "rq-08", "topic": "Advances in renewable energy storage", "rubric": "Battery tech, grid storage, hydrogen, cost analysis, deployment challenges"}
+]

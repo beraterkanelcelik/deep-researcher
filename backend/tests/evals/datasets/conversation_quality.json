@@ -1,0 +1,12 @@
+[
+  {"id": "cq-01", "input": "Explain quantum computing to a 10 year old", "rubric": "Uses simple language, avoids jargon, uses analogies, is engaging and age-appropriate"},
+  {"id": "cq-02", "input": "I'm frustrated because my code keeps crashing. Can you help?", "rubric": "Shows empathy, asks clarifying questions, doesn't assume, offers structured approach"},
+  {"id": "cq-03", "input": "What are the pros and cons of microservices vs monolith?", "rubric": "Presents balanced view, covers key tradeoffs, organized clearly, doesn't favor one side"},
+  {"id": "cq-04", "input": "Summarize the key concepts of REST API design", "rubric": "Covers HTTP methods, status codes, resource naming, statelessness; concise but complete"},
+  {"id": "cq-05", "input": "Can you write me a poem about programming?", "rubric": "Creative, relevant to programming, shows personality, well-structured"},
+  {"id": "cq-06", "input": "I don't understand recursion at all", "rubric": "Patient tone, starts with basics, builds up complexity, uses concrete examples"},
+  {"id": "cq-07", "input": "Compare Python and JavaScript for backend development", "rubric": "Fair comparison, covers ecosystem/performance/syntax/use-cases, practical advice"},
+  {"id": "cq-08", "input": "What should I learn first: React or Vue?", "rubric": "Acknowledges subjectivity, presents criteria for decision, doesn't dismiss either option"},
+  {"id": "cq-09", "input": "Explain the CAP theorem", "rubric": "Accurate technical explanation, uses examples, explains practical implications"},
+  {"id": "cq-10", "input": "I just got my first programming job, any advice?", "rubric": "Encouraging, practical advice, covers both technical and soft skills, specific actionable tips"}
+]
